@@ -3,37 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="فردوس؛ وب‌سایت فردوس با مطالب، اطلاعات و محتوای مرتبط با فردوس."
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <meta
-        name="theme-color"
-        content="#ffffff"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="فردوس؛ وب‌سایت فردوس با مطالب، اطلاعات و محتوای مرتبط با فردوس.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
     <title>فردوس | وب‌سایت فردوس</title>
 
-
     <style>
-
         /* ==================================================
            FONT
-           playback.woff2 باید کنار index.html باشد.
         ================================================== */
-
         @font-face {
             font-family: "Playback";
             src: url("./playback.woff2") format("woff2");
@@ -42,11 +21,9 @@
             font-display: swap;
         }
 
-
         /* ==================================================
            RESET
         ================================================== */
-
         *,
         *::before,
         *::after {
@@ -55,1266 +32,510 @@
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
             min-height: 100vh;
-
-            background-color: #f8f9fa;
-
+            background-color: #ffffff;
             color: #020c58;
-
-            font-family:
-                Tahoma,
-                "Segoe UI",
-                Arial,
-                sans-serif;
-
+            font-family: Tahoma, "Segoe UI", Arial, sans-serif;
             line-height: 1.6;
-
             overflow-x: hidden;
         }
-
 
         img {
             display: block;
             max-width: 100%;
         }
 
-
         a {
             color: inherit;
-            text-decoration: none;
         }
-
 
         button {
             font: inherit;
         }
 
-
         /* ==================================================
            HEADER
-           
-           کل سایت RTL است،
-           اما Header عمداً LTR است.
-
-           لوگو = چپ
-           همبرگر = راست
         ================================================== */
-
         .site-header {
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
-
             width: 100%;
-
-            background-color: rgba(255, 255, 255, 0.92);
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-
+            background-color: #ffffff;
             direction: ltr;
-
-            box-shadow:
-                0 2px 20px rgba(0, 0, 0, 0.06);
         }
-
-
-        /* ==================================================
-           HEADER INNER
-        ================================================== */
 
         .header-inner {
             width: 100%;
-
             min-height: 76px;
-
             display: flex;
-
             flex-direction: row;
-
             align-items: center;
-
             justify-content: space-between;
-
             padding: 0 24px;
-
             direction: ltr;
         }
 
-
-        /* ==================================================
-           LOGO
-           
-           Optical alignment:
-           لوگو عمداً مقدار بسیار کمی تنظیم شده است
-           تا با خطوط همبرگر از نظر بصری هم‌تراز شود.
-        ================================================== */
-
         .brand {
             display: inline-flex;
-
             align-items: center;
-
             justify-content: flex-start;
-
             flex-shrink: 0;
-
             color: #020c58;
-
             text-decoration: none;
-
             line-height: 1;
-
-            /*
-             * Optical alignment
-             */
             transform: translateY(1px);
-
-            position: relative;
         }
-
-
-        .brand::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #020c58;
-            transition: width 0.4s ease;
-        }
-
-
-        .brand:hover::after {
-            width: 100%;
-        }
-
 
         .brand-text {
             display: block;
-
             font-family: "Playback", sans-serif;
-
             font-size: 40px;
-
             font-weight: 400;
-
             line-height: 1;
-
             letter-spacing: 1px;
-
             white-space: nowrap;
-
-            color: #020c58;
         }
-
 
         .brand:focus-visible {
-            outline:
-                2px solid #020c58;
-
+            outline: 2px solid #020c58;
             outline-offset: 6px;
         }
-
-
-        /* ==================================================
-           HEADER ACTIONS
-        ================================================== */
 
         .header-actions {
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             flex-shrink: 0;
         }
-
-
-        /* ==================================================
-           HAMBURGER
-           
-           ارتفاع خطوط و فاصله‌ها طوری تنظیم شده
-           که مجموعه همبرگر از نظر بصری با لوگو
-           هماهنگ باشد.
-        ================================================== */
 
         .menu-toggle {
             position: relative;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: space-between;
-
             width: 36px;
-
             height: 24px;
-
             padding: 0;
-
             border: 0;
-
             outline: 0;
-
             background: transparent;
-
             cursor: pointer;
-
             flex-shrink: 0;
-
-            /*
-             * Optical alignment
-             */
             transform: translateY(-1px);
-
             -webkit-tap-highlight-color: transparent;
-
-            transition: transform 0.3s ease;
         }
-
-
-        .menu-toggle:hover {
-            transform: translateY(-1px) scale(1.05);
-        }
-
 
         .menu-toggle span {
             display: block;
-
             width: 100%;
-
             height: 3px;
-
             flex-shrink: 0;
-
             background-color: #020c58;
-
-            border-radius: 4px;
-
+            border-radius: 0;
             transform-origin: center;
-
-            transition:
-                transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-                opacity 0.25s ease,
-                width 0.3s ease;
+            transition: transform 0.25s ease, opacity 0.2s ease;
         }
 
-
-        .menu-toggle span:nth-child(2) {
-            width: 75%;
-            margin-right: auto;
+        .menu-toggle:hover {
+            opacity: 0.8;
         }
-
 
         .menu-toggle:focus-visible {
-            outline:
-                2px solid #020c58;
-
+            outline: 2px solid #020c58;
             outline-offset: 6px;
         }
 
-
-        /* ==================================================
-           HAMBURGER → X
-        ================================================== */
-
         .menu-toggle.is-open span:nth-child(1) {
-            transform:
-                translateY(10.5px)
-                rotate(45deg);
-            width: 100%;
+            transform: translateY(10.5px) rotate(45deg);
         }
-
-
         .menu-toggle.is-open span:nth-child(2) {
             opacity: 0;
-            transform: scaleX(0);
         }
-
-
         .menu-toggle.is-open span:nth-child(3) {
-            transform:
-                translateY(-10.5px)
-                rotate(-45deg);
-            width: 100%;
+            transform: translateY(-10.5px) rotate(-45deg);
         }
-
-
-        .menu-toggle.is-open span:nth-child(2) {
-            width: 0;
-        }
-
-
-        /* ==================================================
-           MOBILE NAV
-           
-           Header = LTR
-           Navigation content = RTL
-        ================================================== */
 
         .mobile-nav {
             position: absolute;
-
             top: 100%;
-
             right: 0;
-
             left: 0;
-
             display: flex;
-
             flex-direction: column;
-
             gap: 0;
-
             width: 100%;
-
-            padding: 4px 24px 20px;
-
-            background-color: rgba(255, 255, 255, 0.98);
-
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-
-            border-top: none;
-
+            padding: 8px 24px 16px;
+            background-color: #ffffff;
+            border-top: 1px solid #eeeeee;
             direction: rtl;
-
             text-align: right;
-
             visibility: hidden;
-
             opacity: 0;
-
-            transform: translateY(-12px) scale(0.98);
-
+            transform: translateY(-8px);
             pointer-events: none;
-
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.10),
-                0 8px 20px rgba(0, 0, 0, 0.04);
-
-            transition:
-                opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                visibility 0.35s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
         }
-
 
         .mobile-nav.is-open {
             visibility: visible;
-
             opacity: 1;
-
-            transform: translateY(0) scale(1);
-
+            transform: translateY(0);
             pointer-events: auto;
         }
 
-
-        /* ==================================================
-           SEARCH BOX INSIDE MOBILE NAV
-        ================================================== */
-
-        .mobile-search {
-            display: flex;
-
-            align-items: center;
-
+        .mobile-nav a {
+            display: block;
             width: 100%;
-
-            padding: 12px 0 16px;
-
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-            margin-bottom: 6px;
-
-            position: relative;
-        }
-
-
-        .mobile-search::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background-color: #020c58;
-            transition: width 0.5s ease;
-        }
-
-
-        .mobile-search:focus-within::after {
-            width: 100%;
-        }
-
-
-        .mobile-search input {
-            flex: 1;
-
-            padding: 12px 18px;
-
-            border: 2px solid #e8ecf4;
-
-            border-radius: 12px;
-
-            font-size: 15px;
-
-            font-family: inherit;
-
+            padding: 11px 0;
             color: #020c58;
-
-            background-color: #f8f9fd;
-
-            outline: none;
-
-            transition:
-                border-color 0.3s ease,
-                box-shadow 0.3s ease,
-                background-color 0.3s ease;
-        }
-
-
-        .mobile-search input::placeholder {
-            color: #9aa1b8;
-            font-weight: 300;
-        }
-
-
-        .mobile-search input:focus {
-            border-color: #020c58;
-
-            box-shadow:
-                0 0 0 4px rgba(2, 12, 88, 0.08);
-
-            background-color: #ffffff;
-        }
-
-
-        .mobile-search button {
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            flex-shrink: 0;
-
-            margin-right: 12px;
-
-            padding: 12px 22px;
-
-            border: 0;
-
-            border-radius: 12px;
-
-            background-color: #020c58;
-
-            color: #ffffff;
-
-            font-size: 15px;
-
-            font-weight: 600;
-
-            cursor: pointer;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background-color 0.3s ease;
-
-            box-shadow:
-                0 4px 16px rgba(2, 12, 88, 0.25);
-        }
-
-
-        .mobile-search button:hover {
-            transform: translateY(-2px) scale(1.02);
-
-            box-shadow:
-                0 8px 28px rgba(2, 12, 88, 0.35);
-
-            background-color: #1a2f7a;
-        }
-
-
-        .mobile-search button:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-
-        .mobile-search button:focus-visible {
-            outline:
-                2px solid #020c58;
-
-            outline-offset: 3px;
-        }
-
-
-        /* ==================================================
-           MENU LINKS - Premium Style
-        ================================================== */
-
-        .mobile-nav .nav-link {
-            display: flex;
-
-            align-items: center;
-
-            gap: 14px;
-
-            width: 100%;
-
-            padding: 14px 6px;
-
-            color: #020c58;
-
             font-size: 16px;
-
             font-weight: 500;
-
             line-height: 1.6;
-
             text-align: right;
-
             text-decoration: none;
-
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-
-            transition:
-                color 0.3s ease,
-                transform 0.3s ease,
-                padding-right 0.3s ease,
-                background-color 0.3s ease;
-
-            position: relative;
-
-            border-radius: 8px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.2s ease;
         }
 
-
-        .mobile-nav .nav-link::before {
-            content: '';
-            position: absolute;
-            right: -6px;
-            top: 50%;
-            transform: translateY(-50%) scaleX(0);
-            width: 4px;
-            height: 60%;
-            background-color: #020c58;
-            border-radius: 4px;
-            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-
-        .mobile-nav .nav-link:hover {
-            color: #020c58;
-
-            transform: translateX(-6px);
-
-            padding-right: 12px;
-
-            background-color: rgba(2, 12, 88, 0.04);
-        }
-
-
-        .mobile-nav .nav-link:hover::before {
-            transform: translateY(-50%) scaleX(1);
-        }
-
-
-        .mobile-nav .nav-link .link-icon {
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 36px;
-
-            height: 36px;
-
-            flex-shrink: 0;
-
-            border-radius: 10px;
-
-            background: rgba(2, 12, 88, 0.06);
-
-            font-size: 18px;
-
-            transition:
-                background 0.3s ease,
-                transform 0.3s ease;
-        }
-
-
-        .mobile-nav .nav-link:hover .link-icon {
-            background: rgba(2, 12, 88, 0.12);
-
-            transform: scale(1.1) rotate(-4deg);
-        }
-
-
-        .mobile-nav .nav-link .link-text {
-            flex: 1;
-        }
-
-
-        .mobile-nav .nav-link .link-badge {
-            display: inline-block;
-
-            padding: 2px 12px;
-
-            border-radius: 20px;
-
-            font-size: 11px;
-
-            font-weight: 700;
-
-            color: #ffffff;
-
-            background-color: #020c58;
-
-            letter-spacing: 0.5px;
-
-            text-transform: uppercase;
-        }
-
-
-        .mobile-nav .nav-link:last-child {
+        .mobile-nav a:last-child {
             border-bottom: 0;
         }
 
+        .mobile-nav a:hover {
+            color: #3046a5;
+        }
 
         /* ==================================================
            MAIN
         ================================================== */
-
         main {
             width: 100%;
-
             direction: rtl;
         }
-
 
         /* ==================================================
            HERO
         ================================================== */
-
         .hero {
             width: 100%;
-
-            padding:
-                20px 24px 0;
+            padding: 0 24px 0;
         }
-
 
         .hero-inner {
             width: 100%;
-
             max-width: 1400px;
-
-            margin:
-                0 auto;
+            margin: 0 auto;
         }
-
 
         .hero-image {
             display: block;
-
             width: 100%;
-
             height: auto;
-
-            border-radius: 16px;
-
-            box-shadow:
-                0 8px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
         }
 
+        /* ==================================================
+           SHOWCASE (آثار منتخب نمایشی)
+        ================================================== */
+        .showcase {
+            width: 100%;
+            padding: 48px 24px 60px;
+        }
+
+        .showcase-inner {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .showcase-title {
+            font-family: "Playback", sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #020c58;
+            margin-bottom: 28px;
+            text-align: right;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .showcase-item {
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-radius: 0;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+        }
+
+        .showcase-item-caption {
+            padding: 20px 24px 24px;
+            text-align: right;
+        }
+
+        .showcase-item-caption h3 {
+            font-family: "Playback", sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #020c58;
+            margin-bottom: 8px;
+        }
+
+        .showcase-item-caption p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
 
         /* ==================================================
-           TABLET
-           768px تا 1023px
+           RESPONSIVE TABLET
         ================================================== */
-
-        @media (min-width: 768px)
-        and (max-width: 1023px) {
-
+        @media (min-width: 768px) and (max-width: 1023px) {
             .header-inner {
                 min-height: 68px;
-
-                padding:
-                    0 20px;
+                padding: 0 20px;
             }
-
-
             .brand {
-                transform:
-                    translateY(1px);
+                transform: translateY(1px);
             }
-
-
             .brand-text {
                 font-size: 34px;
-
                 letter-spacing: 1px;
             }
-
-
             .menu-toggle {
                 width: 32px;
-
                 height: 22px;
-
-                transform:
-                    translateY(-1px);
+                transform: translateY(-1px);
             }
-
-
             .menu-toggle span {
                 height: 3px;
             }
-
-
             .menu-toggle.is-open span:nth-child(1) {
-                transform:
-                    translateY(9.5px)
-                    rotate(45deg);
+                transform: translateY(9.5px) rotate(45deg);
             }
-
-
             .menu-toggle.is-open span:nth-child(3) {
-                transform:
-                    translateY(-9.5px)
-                    rotate(-45deg);
+                transform: translateY(-9.5px) rotate(-45deg);
             }
-
-
             .mobile-nav {
                 padding-left: 20px;
-
                 padding-right: 20px;
             }
-
-
-            .mobile-nav .nav-link {
-                padding: 12px 4px;
-                font-size: 15px;
-            }
-
-
             .hero {
-                padding:
-                    16px 18px 0;
+                padding: 0 18px 0;
             }
-
-
-            .hero-image {
-                border-radius: 12px;
+            .showcase {
+                padding: 40px 18px 50px;
+            }
+            .showcase-title {
+                font-size: 26px;
+                margin-bottom: 24px;
+            }
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            .showcase-item-caption h3 {
+                font-size: 19px;
             }
         }
 
-
         /* ==================================================
-           MOBILE
-           0 تا 767px
+           RESPONSIVE MOBILE
         ================================================== */
-
         @media (max-width: 767px) {
-
             .header-inner {
                 min-height: 58px;
-
-                padding:
-                    0 15px;
+                padding: 0 15px;
             }
-
-
-            /*
-             * لوگو
-             *
-             * +1px برای Optical Alignment
-             */
             .brand {
-                transform:
-                    translateY(1px);
+                transform: translateY(1px);
             }
-
-
             .brand-text {
                 font-size: 27px;
-
                 letter-spacing: 0.5px;
             }
-
-
-            /*
-             * همبرگر
-             *
-             * -1px برای Optical Alignment
-             */
             .menu-toggle {
                 width: 27px;
-
                 height: 18px;
-
-                transform:
-                    translateY(-1px);
+                transform: translateY(-1px);
             }
-
-
             .menu-toggle span {
                 height: 3px;
             }
-
-
             .menu-toggle.is-open span:nth-child(1) {
-                transform:
-                    translateY(7.5px)
-                    rotate(45deg);
+                transform: translateY(7.5px) rotate(45deg);
             }
-
-
             .menu-toggle.is-open span:nth-child(3) {
-                transform:
-                    translateY(-7.5px)
-                    rotate(-45deg);
+                transform: translateY(-7.5px) rotate(-45deg);
             }
-
-
             .mobile-nav {
-                padding:
-                    4px 15px 16px;
+                padding: 7px 15px 14px;
             }
-
-
-            .mobile-search input {
-                font-size: 14px;
-
-                padding: 10px 14px;
-            }
-
-
-            .mobile-search button {
-                font-size: 14px;
-
-                padding: 10px 16px;
-
-                margin-right: 8px;
-            }
-
-
-            .mobile-nav .nav-link {
-                padding: 11px 4px;
-
-                font-size: 14px;
-
-                gap: 12px;
-            }
-
-
-            .mobile-nav .nav-link .link-icon {
-                width: 30px;
-
-                height: 30px;
-
+            .mobile-nav a {
+                padding: 10px 0;
                 font-size: 15px;
-
-                border-radius: 8px;
             }
-
-
-            .mobile-nav .nav-link .link-badge {
-                font-size: 10px;
-
-                padding: 1px 10px;
-            }
-
-
             .hero {
-                padding:
-                    10px 10px 0;
+                padding: 0 10px 0;
             }
-
-
-            .hero-image {
-                border-radius: 10px;
-
-                box-shadow:
-                    0 4px 20px rgba(0, 0, 0, 0.06);
+            .showcase {
+                padding: 32px 10px 40px;
+            }
+            .showcase-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .showcase-item-caption {
+                padding: 16px 18px 20px;
+            }
+            .showcase-item-caption h3 {
+                font-size: 18px;
+            }
+            .showcase-item-caption p {
+                font-size: 14px;
             }
         }
-
 
         /* ==================================================
            REDUCED MOTION
         ================================================== */
-
         @media (prefers-reduced-motion: reduce) {
-
             html {
                 scroll-behavior: auto;
             }
-
-
             *,
             *::before,
             *::after {
                 transition: none !important;
             }
         }
-
     </style>
 </head>
 
-
 <body>
-
 
     <!-- ==================================================
          HEADER
     ================================================== -->
-
     <header class="site-header">
-
         <div class="header-inner">
 
-
-            <!-- ==================================================
-                 LOGO - LEFT
-            ================================================== -->
-
-            <a
-                href="/"
-                class="brand"
-                aria-label="صفحه اصلی فردوس"
-            >
-
-                <span class="brand-text">
-                    FERDOWS
-                </span>
-
+            <a href="/" class="brand" aria-label="صفحه اصلی فردوس">
+                <span class="brand-text">FERDOWS</span>
             </a>
 
-
-            <!-- ==================================================
-                 HAMBURGER - RIGHT
-            ================================================== -->
-
             <div class="header-actions">
-
-                <button
-                    type="button"
-                    class="menu-toggle"
-                    id="menuToggle"
-                    aria-label="باز کردن منو"
-                    aria-expanded="false"
-                    aria-controls="mobileNav"
-                >
-
+                <button type="button" class="menu-toggle" id="menuToggle"
+                        aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobileNav">
                     <span></span>
-
                     <span></span>
-
                     <span></span>
-
                 </button>
-
             </div>
 
         </div>
 
-
-        <!-- ==================================================
-             MOBILE NAV - Premium
-        ================================================== -->
-
-        <nav
-            class="mobile-nav"
-            id="mobileNav"
-            aria-label="منوی اصلی"
-            aria-hidden="true"
-        >
-
-            <!-- ==================================================
-                 SEARCH BOX
-            ================================================== -->
-
-            <div class="mobile-search" role="search">
-
-                <input
-                    type="text"
-                    id="mobileSearchInput"
-                    placeholder="جستجو در فردوس..."
-                    aria-label="جستجو"
-                >
-
-                <button
-                    type="button"
-                    id="mobileSearchBtn"
-                    aria-label="اجرای جستجو"
-                >
-                    جستجو
-                </button>
-
-            </div>
-
-            <!-- ==================================================
-                 MENU LINKS - با آیکون و پرستیژ
-            ================================================== -->
-
-            <a href="/" class="nav-link">
-                <span class="link-icon">🏠</span>
-                <span class="link-text">صفحه اصلی</span>
-            </a>
-
-            <a href="/about/" class="nav-link">
-                <span class="link-icon">ℹ️</span>
-                <span class="link-text">درباره ما</span>
-                <span class="link-badge">جدید</span>
-            </a>
-
-            <a href="/services/" class="nav-link">
-                <span class="link-icon">⚡</span>
-                <span class="link-text">خدمات</span>
-            </a>
-
-            <a href="/blog/" class="nav-link">
-                <span class="link-icon">📝</span>
-                <span class="link-text">وبلاگ</span>
-                <span class="link-badge">۱۰+</span>
-            </a>
-
-            <a href="/portfolio/" class="nav-link">
-                <span class="link-icon">🎯</span>
-                <span class="link-text">نمونه کارها</span>
-            </a>
-
-            <a href="/contact/" class="nav-link">
-                <span class="link-icon">📬</span>
-                <span class="link-text">تماس با ما</span>
-            </a>
-
+        <nav class="mobile-nav" id="mobileNav" aria-label="منوی اصلی" aria-hidden="true">
+            <a href="/">صفحه اصلی</a>
+            <a href="/about/">درباره ما</a>
+            <a href="/contact/">تماس با ما</a>
         </nav>
-
     </header>
-
 
     <!-- ==================================================
          MAIN
     ================================================== -->
-
     <main>
 
-        <section
-            class="hero"
-            aria-labelledby="hero-title"
-        >
-
+        <section class="hero" aria-labelledby="hero-title">
             <div class="hero-inner">
-
-                <h1 id="hero-title" hidden>
-                    فردوس
-                </h1>
-
-
-                <img
-                    class="hero-image"
-                    src="./banner.jpg"
-                    alt="فردوس؛ کتاب و فنجان قهوه در فضایی برای مطالعه"
-                    width="1280"
-                    height="720"
-                    fetchpriority="high"
-                >
-
+                <h1 id="hero-title" hidden>فردوس</h1>
+                <img class="hero-image" src="./banner.jpg"
+                     alt="فردوس؛ کتاب و فنجان قهوه در فضایی برای مطالعه"
+                     width="1280" height="720" fetchpriority="high">
             </div>
+        </section>
 
+        <!-- ==================================================
+             SHOWCASE (آثار منتخب نمایشی)
+        ================================================== -->
+        <section class="showcase" aria-labelledby="showcase-title">
+            <div class="showcase-inner">
+                <h2 id="showcase-title" class="showcase-title">آثار منتخب نمایشی</h2>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="./showcase-1.jpg"
+                             alt="نمایش آثار منتخب فردوس"
+                             width="800" height="600" loading="lazy">
+                        <div class="showcase-item-caption">
+                            <h3>عنوان اثر</h3>
+                            <p>توضیح مختصر درباره این اثر منتخب از مجموعه فردوس.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
 
-
     <!-- ==================================================
          JAVASCRIPT
     ================================================== -->
-
     <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileNav = document.getElementById("mobileNav");
 
-        const menuToggle =
-            document.getElementById("menuToggle");
-
-        const mobileNav =
-            document.getElementById("mobileNav");
-
-        const searchInput =
-            document.getElementById("mobileSearchInput");
-
-        const searchBtn =
-            document.getElementById("mobileSearchBtn");
-
-
-        /* ==================================================
-           OPEN / CLOSE MENU
-        ================================================== */
-
-        menuToggle.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    menuToggle.classList.toggle(
-                        "is-open"
-                    );
-
-
-                mobileNav.classList.toggle(
-                    "is-open",
-                    isOpen
-                );
-
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "بستن منو"
-                        : "باز کردن منو"
-                );
-
-
-                mobileNav.setAttribute(
-                    "aria-hidden",
-                    String(!isOpen)
-                );
-
-                if (isOpen) {
-                    document.body.style.overflow = 'hidden';
-                    setTimeout(function () {
-                        searchInput.focus();
-                    }, 200);
-                } else {
-                    document.body.style.overflow = '';
-                }
-
-            }
-        );
-
-
-        /* ==================================================
-           ESCAPE
-        ================================================== */
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Escape" &&
-                    menuToggle.classList.contains(
-                        "is-open"
-                    )
-                ) {
-
-                    menuToggle.click();
-
-                    menuToggle.focus();
-
-                }
-
-            }
-        );
-
-
-        /* ==================================================
-           CLOSE AFTER NAVIGATION
-        ================================================== */
-
-        mobileNav
-            .querySelectorAll(".nav-link")
-            .forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            if (
-                                menuToggle.classList.contains(
-                                    "is-open"
-                                )
-                            ) {
-
-                                menuToggle.click();
-
-                            }
-
-                        }
-                    );
-
-                }
-            );
-
-
-        /* ==================================================
-           SEARCH FUNCTIONALITY
-        ================================================== */
-
-        function performSearch() {
-            const query = searchInput.value.trim();
-
-            if (query === "") {
-                searchInput.style.borderColor = '#dc3545';
-                searchInput.style.boxShadow = '0 0 0 4px rgba(220, 53, 69, 0.12)';
-                setTimeout(() => {
-                    searchInput.style.borderColor = '';
-                    searchInput.style.boxShadow = '';
-                }, 800);
-                return;
-            }
-
-            window.location.href = "/search/?q=" + encodeURIComponent(query);
-        }
-
-        searchBtn.addEventListener("click", performSearch);
-
-        searchInput.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                performSearch();
-            }
+        menuToggle.addEventListener("click", function () {
+            const isOpen = menuToggle.classList.toggle("is-open");
+            mobileNav.classList.toggle("is-open", isOpen);
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute("aria-label", isOpen ? "بستن منو" : "باز کردن منو");
+            mobileNav.setAttribute("aria-hidden", String(!isOpen));
         });
 
-
-        /* ==================================================
-           CLOSE ON OUTSIDE CLICK
-        ================================================== */
-
-        document.addEventListener('click', function (event) {
-            const isHeader = event.target.closest('.site-header');
-            if (!isHeader && menuToggle.classList.contains('is-open')) {
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && menuToggle.classList.contains("is-open")) {
                 menuToggle.click();
+                menuToggle.focus();
             }
         });
 
+        mobileNav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (menuToggle.classList.contains("is-open")) {
+                    menuToggle.click();
+                }
+            });
+        });
     </script>
 
 </body>
