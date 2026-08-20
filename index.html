@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="فردوس؛ وب‌سایت فردوس با مطالب، اطلاعات و محتوای مرتبط با فردوس.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+    <title>فردوس | وب‌سایت فردوس</title>
+
+    <style>
+        /* ==================================================
+           FONT
+        ================================================== */
+        @font-face {
+            font-family: "Playback";
+            src: url("./playback.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* ==================================================
+           RESET
+        ================================================== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #ffffff;
+            color: #020c58;
+            font-family: Tahoma, "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* ==================================================
+           HEADER
+        ================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background-color: #ffffff;
+            direction: ltr;
+        }
+
+        .header-inner {
+            width: 100%;
+            min-height: 76px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            direction: ltr;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-shrink: 0;
+            color: #1A4FD4;
+            text-decoration: none;
+            line-height: 1;
+            transform: translateY(1px);
+        }
+
+        .brand-text {
+            display: block;
+            font-family: "Playback", sans-serif;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .brand:focus-visible {
+            outline: 2px solid #1A4FD4;
+            outline-offset: 6px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .menu-toggle {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 36px;
+            height: 24px;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            cursor: pointer;
+            flex-shrink: 0;
+            transform: translateY(-1px);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            flex-shrink: 0;
+            background-color: #000000;
+            border-radius: 0;
+            transform-origin: center;
+            transition: transform 0.25s ease, opacity 0.2s ease;
+        }
+
+        .menu-toggle:hover {
+            opacity: 0.8;
+        }
+
+        .menu-toggle:focus-visible {
+            outline: 2px solid #1A4FD4;
+            outline-offset: 6px;
+        }
+
+        .menu-toggle.is-open span:nth-child(1) {
+            transform: translateY(10.5px) rotate(45deg);
+        }
+        .menu-toggle.is-open span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.is-open span:nth-child(3) {
+            transform: translateY(-10.5px) rotate(-45deg);
+        }
+
+        .mobile-nav {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            padding: 8px 24px 16px;
+            background-color: #ffffff;
+            border-top: 1px solid #eeeeee;
+            direction: rtl;
+            text-align: right;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(-8px);
+            pointer-events: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+        }
+
+        .mobile-nav.is-open {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .mobile-nav a {
+            display: block;
+            width: 100%;
+            padding: 11px 0;
+            color: #020c58;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: right;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: 0;
+        }
+
+        .mobile-nav a:hover {
+            color: #1A4FD4;
+        }
+
+        /* ==================================================
+           MAIN
+        ================================================== */
+        main {
+            width: 100%;
+            direction: rtl;
+        }
+
+        /* ==================================================
+           HERO
+        ================================================== */
+        .hero {
+            width: 100%;
+            padding: 0 24px 0;
+        }
+
+        .hero-inner {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+        }
+
+        /* ==================================================
+           SHOWCASE (آثار منتخب نمایشی)
+        ================================================== */
+        .showcase {
+            width: 100%;
+            padding: 48px 24px 60px;
+        }
+
+        .showcase-inner {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .showcase-title {
+            font-family: "Playback", sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #020c58;
+            margin-bottom: 28px;
+            text-align: right;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .showcase-item {
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-radius: 0;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+        }
+
+        .showcase-item-caption {
+            padding: 20px 24px 24px;
+            text-align: right;
+        }
+
+        .showcase-item-caption h3 {
+            font-family: "Playback", sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #020c58;
+            margin-bottom: 8px;
+        }
+
+        .showcase-item-caption p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ==================================================
+           RESPONSIVE TABLET
+        ================================================== */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .header-inner {
+                min-height: 68px;
+                padding: 0 20px;
+            }
+            .brand {
+                transform: translateY(1px);
+            }
+            .brand-text {
+                font-size: 34px;
+                letter-spacing: 1px;
+            }
+            .menu-toggle {
+                width: 32px;
+                height: 22px;
+                transform: translateY(-1px);
+            }
+            .menu-toggle span {
+                height: 3px;
+            }
+            .menu-toggle.is-open span:nth-child(1) {
+                transform: translateY(9.5px) rotate(45deg);
+            }
+            .menu-toggle.is-open span:nth-child(3) {
+                transform: translateY(-9.5px) rotate(-45deg);
+            }
+            .mobile-nav {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .hero {
+                padding: 0 18px 0;
+            }
+            .showcase {
+                padding: 40px 18px 50px;
+            }
+            .showcase-title {
+                font-size: 26px;
+                margin-bottom: 24px;
+            }
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            .showcase-item-caption h3 {
+                font-size: 19px;
+            }
+        }
+
+        /* ==================================================
+           RESPONSIVE MOBILE
+        ================================================== */
+        @media (max-width: 767px) {
+            .header-inner {
+                min-height: 58px;
+                padding: 0 15px;
+            }
+            .brand {
+                transform: translateY(1px);
+            }
+            .brand-text {
+                font-size: 27px;
+                letter-spacing: 0.5px;
+            }
+            .menu-toggle {
+                width: 27px;
+                height: 18px;
+                transform: translateY(-1px);
+            }
+            .menu-toggle span {
+                height: 3px;
+            }
+            .menu-toggle.is-open span:nth-child(1) {
+                transform: translateY(7.5px) rotate(45deg);
+            }
+            .menu-toggle.is-open span:nth-child(3) {
+                transform: translateY(-7.5px) rotate(-45deg);
+            }
+            .mobile-nav {
+                padding: 7px 15px 14px;
+            }
+            .mobile-nav a {
+                padding: 10px 0;
+                font-size: 15px;
+            }
+            .hero {
+                padding: 0 10px 0;
+            }
+            .showcase {
+                padding: 32px 10px 40px;
+            }
+            .showcase-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .showcase-item-caption {
+                padding: 16px 18px 20px;
+            }
+            .showcase-item-caption h3 {
+                font-size: 18px;
+            }
+            .showcase-item-caption p {
+                font-size: 14px;
+            }
+        }
+
+        /* ==================================================
+           REDUCED MOTION
+        ================================================== */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="/" class="brand" aria-label="صفحه اصلی فردوس">
+                <span class="brand-text">FERDOWS</span>
+            </a>
+
+            <div class="header-actions">
+                <button type="button" class="menu-toggle" id="menuToggle"
+                        aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobileNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+
+        <nav class="mobile-nav" id="mobileNav" aria-label="منوی اصلی" aria-hidden="true">
+            <a href="/">صفحه اصلی</a>
+            <a href="/about/">درباره ما</a>
+            <a href="/contact/">تماس با ما</a>
+        </nav>
+    </header>
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+    <main>
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <h1 id="hero-title" hidden>فردوس</h1>
+                <img class="hero-image" src="./banner.jpg"
+                     alt="فردوس؛ کتاب و فنجان قهوه در فضایی برای مطالعه"
+                     width="1280" height="720" fetchpriority="high">
+            </div>
+        </section>
+
+        <!-- ==================================================
+             SHOWCASE (آثار منتخب نمایشی)
+        ================================================== -->
+        <section class="showcase" aria-labelledby="showcase-title">
+            <div class="showcase-inner">
+                <h2 id="showcase-title" class="showcase-title">آثار منتخب نمایشی</h2>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="./showcase-1.jpg"
+                             alt="نمایش آثار منتخب فردوس"
+                             width="800" height="600" loading="lazy">
+                        <div class="showcase-item-caption">
+                            <h3>عنوان اثر</h3>
+                            <p>توضیح مختصر درباره این اثر منتخب از مجموعه فردوس.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileNav = document.getElementById("mobileNav");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = menuToggle.classList.toggle("is-open");
+            mobileNav.classList.toggle("is-open", isOpen);
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute("aria-label", isOpen ? "بستن منو" : "باز کردن منو");
+            mobileNav.setAttribute("aria-hidden", String(!isOpen));
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && menuToggle.classList.contains("is-open")) {
+                menuToggle.click();
+                menuToggle.focus();
+            }
+        });
+
+        mobileNav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (menuToggle.classList.contains("is-open")) {
+                    menuToggle.click();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
